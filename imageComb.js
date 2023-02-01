@@ -85,3 +85,6 @@ document.getElementById("canvas").addEventListener("click", function() {
 downloader();
 });
 
+document.getElementById("canvasAlt").addEventListener("click", function() {
+  downloader();
+  });

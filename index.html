@@ -52,6 +52,12 @@
         canvas{
             margin: 20px;
         }
+        @media (max-width: 767px) {
+    canvas {
+      width: 300px;
+      height: 300px;
+    }
+  }
 
 @keyframes colorRotate {
   from {
@@ -142,7 +148,9 @@
         <div>
         <button id="save" class="blue-pill" style="margin-left: 14em; margin-top: 10px;" onclick="rizz()">Make Image</button>
         <span>(click again if image doesn't load)</span>
+
     </div></div>
+   
     <div>
     <div id="canvasHolder">
         <canvas id="canvas"></canvas>
