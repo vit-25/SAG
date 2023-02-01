@@ -8,7 +8,8 @@ img3.src = "./images/SHG.png";
 
 var image_input = document.querySelector("#imageAccept");
 var imgList = [];
-var img1List = ["./images/image1.jpg", "./images/image2.jpg", "./images/image3.jpg", "./images/image4.jpg", "./images/image5.jpg", "./images/image6.jpg", "./images/image7.jpg", "./images/image8.jpg", "./images/image9.jpg", "./images/image10.jpg"]
+var img1List = ["https://i.postimg.cc/DmRBRXWJ/image1.png", "https://i.postimg.cc/v1DnQ0kQ/image10.jpg", "https://i.postimg.cc/N9HrX5QS/image2.jpg", "https://i.postimg.cc/6yRYKpRH/image3.jpg", "https://i.postimg.cc/njCGPFpG/image4.jpg", "https://i.postimg.cc/4HcbXWKK/image5.jpg", "https://i.postimg.cc/H8189dxx/image6.jpg", "https://i.postimg.cc/WtZMFf3z/image7.jpg", "https://i.postimg.cc/XBKG2mGg/image9.jpg"]
+var dataURL = canvas.toDataURL("image/jpg");
 
 
 image_input.addEventListener("change", (e)=>{
@@ -24,7 +25,7 @@ image_input.addEventListener("change", (e)=>{
         imgList[i] = picFile.result;
         img1.src = imgList[0];
         img2.src = imgList[1];
-        var num = Math.floor(Math.random() * (img1List.length+1));
+        var num = Math.floor(Math.random() * (img1List.length));
         if(files.length==1){
           img2.src = img1.src;
           img1.src = img1List[num];
@@ -43,24 +44,44 @@ image_input.addEventListener("change", (e)=>{
 //make the image
 function rizz() {
   var canvas = document.getElementById("canvas");
-  var width = Math.min(img1.width, img2.width);
-  var height = Math.min(img1.height, img2.height);
-  canvas.width = width * 2;
-  canvas.height = height + img3.height;
+  var canvasAlt = document.getElementById("canvasAlt")
+  canvas.width = 600;
+  canvas.height = 512;
+  canvasAlt.width= 600;
+  canvasAlt.height= 512; 
   var ctx = canvas.getContext("2d");
-  ctx.drawImage(img1, (img1.width - width) / 2, (img1.height - height) / 2, width, height, 0, img3.height, width, height);
-  ctx.drawImage(img2, (img2.width - width) / 2, (img2.height - height) / 2, width, height, width, img3.height, width, height);
-  ctx.drawImage(img3, 0, 0, img3.width, img3.height, 0, 0, canvas.width, img3.height);
+  var ctx2= canvasAlt.getContext("2d");
+  ctx.drawImage(img1, 0, 0, img1.width, img1.height, 0, img3.height, canvas.width / 2, canvas.height - img3.height);
+  ctx.drawImage(img2, 0, 0, img2.width, img2.height, canvas.width / 2, img3.height, canvas.width / 2, canvas.height - img3.height);
+  ctx.drawImage(img3, 0, 0, img3.width, img3.height, 0, 0, canvas.width, img3.height);  
+  ctx2.drawImage(img2, 0, 0, img2.width, img2.height, 0, img3.height, canvas.width / 2, canvas.height - img3.height);
+  ctx2.drawImage(img1, 0, 0, img1.width, img1.height, canvas.width / 2, img3.height, canvas.width / 2, canvas.height - img3.height);
+  ctx2.drawImage(img3, 0, 0, img3.width, img3.height, 0, 0, canvas.width, img3.height);  
+
   canvas.classList.add("created");
+  canvasAlt.classList.add("created");
   document.body.appendChild(canvas);
+  document.body.appendChild(canvasAlt);
 
 }
 
 // download the image
+function downloader(){
+  var canvas = document.getElementById("canvas");
+
+  html2canvas(canvas).then(function(canvas) {
+    // Convert the canvas to a data URL
+    var dataURL = canvas.toDataURL();
+  
+    // Create a download link and trigger the download
+    var link = document.createElement("a");
+    link.download = "Sticker.png";
+    link.href = dataURL;
+    link.click();
+  });
+  
+}
 document.getElementById("canvas").addEventListener("click", function() {
-  var image = document.getElementsByClassName("created");
-  var link = document.createElement("a");
-  link.download = "image.png";
-  link.href = image.src;
-  link.click();
+downloader();
 });
+

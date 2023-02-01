@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <title>SAG</title>
     <style>
+        html{
+            max-height: fit-content;
+        }
         body{
             display: flex;
-            justify-content: center;
             align-items: center;
             gap: 1em;
+            height: fit-content!important;
             flex-direction: column;
             justify-content: space-around;
             height: 95vh;
@@ -30,12 +34,42 @@
             opacity: 0.05;
             font-size:8em;
             z-index: -99999;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: auto;
         }
         h2{
             position:relative;
-            opacity: 0.15;
-            font-size: 6em;
+            opacity: 1;
+            font-size: 3em;
+            animation: colorRotate 6s linear 0s infinite;
+            letter-spacing: -2px;
         }
+
+        canvas{
+            margin: 20px;
+        }
+
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
 
         .blue-pill {
   background-color: #a5b8da;
@@ -93,23 +127,29 @@
     -moz-box-shadow: inset 0 1px 0 0 #a5b9d9;
     box-shadow: inset 0 1px 0 0 #a5b9d9;
         }
+   
     </style>
+    
 </head>
 <body>
+    
     <div>
-    <h1 >RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG</h1>
-    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2></div>
+    <h1 >RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG RAOG</h1>
+<h2>SEXUAL ASSAULT IMAGE GENERATOR</h2>
     <div id="slctimg">
         <label for="file">Add either <b>one</b> or <b>two</b> Images</label>
-        <input type="file" id="imageAccept" accept="image/png, image/jpg" multiple="multiple"> 
+        <input type="file" id="imageAccept" accept="image/jpg, image/jpeg, image/png" multiple="multiple"> 
         <div>
         <button id="save" class="blue-pill" style="margin-left: 14em; margin-top: 10px;" onclick="rizz()">Make Image</button>
+        <span>(click again if image doesn't load)</span>
     </div></div>
-  
+    <div>
     <div id="canvasHolder">
         <canvas id="canvas"></canvas>
+        <canvas id="canvasAlt"></canvas>
     </div>
-
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="./imageComb.js"></script>
 </body>
 </html>
